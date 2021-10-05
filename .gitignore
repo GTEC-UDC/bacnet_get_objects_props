@@ -1,0 +1,6 @@
+*_venv
+*.vscode
+*.log
+*.csv
+*.ods
+*.xlsx

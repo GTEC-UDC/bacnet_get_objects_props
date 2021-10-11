@@ -1,6 +1,5 @@
 import argparse
 import BAC0
-import os
 import pandas as pd
 import sys
 

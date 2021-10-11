@@ -14,6 +14,9 @@ def get_bacnet_objects_props(addr):
     if len(info) == 0:
         raise Exception("Could not find a BACnet controller " +
                         "on the specified address")
+    elif len(info) > 1:
+        print("Warning: more than 1 device found in the address specified. "
+              "Only returning data for the first device.", file=sys.stderr)
 
     # create device object
     dev = BAC0.device(info[0][0], info[0][1], bacnet, poll=0)

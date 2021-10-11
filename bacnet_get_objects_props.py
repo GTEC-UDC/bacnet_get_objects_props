@@ -59,4 +59,4 @@ if __name__ == "__main__":
         data = get_bacnet_objects_props(args.address)
         save_bacnet_objects_props(data, args.file)
     except Exception as e:
-        print("Error:", e)
+        print("Error: ", e, file=sys.stderr)

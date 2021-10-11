@@ -21,16 +21,6 @@ def get_bacnet_objects_props(addr):
     # get points properties
     prop_list = [point.properties.asdict for point in dev.points]
 
-    # disconnect from bacnet
-    dev.disconnect()
-
-    # Delete files Device_<n>.db and Device_<n>.bin created in dev.disconnect()
-    for ext in [".db", ".bin"]:
-        try:
-            os.remove("Device_" + str(info[0][1]) + ext)
-        except:
-            pass
-
     # apply some changes in the property list
     for prop in prop_list:
         prop['device'] = str(prop['device'])

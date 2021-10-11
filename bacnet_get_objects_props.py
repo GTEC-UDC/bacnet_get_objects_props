@@ -26,7 +26,7 @@ def get_bacnet_objects_props(addr):
 
     # apply some changes in the property list
     for prop in prop_list:
-        prop['device'] = str(prop['device'])
+        prop['device'] = prop['device'].properties.name
         prop['address'] = int(prop['address'])
         prop['type_value'] = \
             BAC0.bacpypes.object.ObjectType.enumerations[prop['type']]
